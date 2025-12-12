@@ -38,7 +38,8 @@ const ReviewCard = ({ review }) => {
   };
 
   return (
-    <div className={`group relative bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-slate-100 border-t-[6px] ${borderClass[theme]}`}>
+    // Added 'transform-gpu' for smoother animation
+    <div className={`group relative bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transform-gpu transition-all duration-300 overflow-hidden border border-slate-100 border-t-[6px] ${borderClass[theme]}`}>
       
       <div className="p-6">
         {/* Header: Product & Badge */}
@@ -63,7 +64,7 @@ const ReviewCard = ({ review }) => {
           />
         </div>
 
-        {/* Section 1: User Voice (Review Asli) */}
+        {/* Section 1: User Voice */}
         <div className="relative mb-6">
           <div className="absolute -top-2 -left-2 text-slate-200">
             <Quote size={24} fill="currentColor" className="opacity-50" />
@@ -75,7 +76,7 @@ const ReviewCard = ({ review }) => {
           </div>
         </div>
 
-        {/* Section 2: AI Insights (Key Points) */}
+        {/* Section 2: AI Insights */}
         {review.key_points && review.key_points.length > 0 && (
           <div className="bg-slate-50/80 rounded-xl p-4 border border-slate-100">
             <div className="flex items-center gap-2 mb-3">
@@ -108,7 +109,7 @@ const ReviewCard = ({ review }) => {
         )}
       </div>
 
-      {/* Decorative Footer Line */}
+      {/* Footer Line */}
       <div className="h-1.5 w-full bg-gradient-to-r from-transparent via-slate-100 to-transparent opacity-50"></div>
     </div>
   );
