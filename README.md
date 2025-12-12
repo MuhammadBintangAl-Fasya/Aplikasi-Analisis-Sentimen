@@ -194,8 +194,8 @@ npm install
 
 ##  HASIL AKHIR
 
-
-
+![alt text](https://github.com/user-attachments/assets/4964df66-8edb-47f3-acb0-8f4f3186fde3) 
+ 
 ## 📄 License
 
 MIT License
