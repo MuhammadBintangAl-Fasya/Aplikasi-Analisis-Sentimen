@@ -50,7 +50,6 @@ const ReviewForm = ({ onAnalysisComplete }) => {
 
   // Logika Visual Progress Bar
   const charCount = formData.reviewText.length;
-  // Warna berubah dinamis: Merah (Pendek) -> Kuning (Sedang) -> Hijau (Bagus)
   const progressColor = charCount < 10 ? 'bg-rose-400' : charCount < 50 ? 'bg-amber-400' : 'bg-emerald-500';
   const progressWidth = Math.min((charCount / 200) * 100, 100);
 

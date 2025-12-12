@@ -2,13 +2,8 @@ import React from 'react';
 import { Calendar, Quote, Sparkles, Box, CheckCircle2 } from 'lucide-react';
 import SentimentBadge from './SentimentBadge';
 
-/**
- * ReviewCard Component - Premium Redesign
- * Menampilkan hasil analisis dengan gaya Dashboard Widget
- */
 const ReviewCard = ({ review }) => {
   
-  // Format tanggal ke Indonesia
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleString('id-ID', {
@@ -20,7 +15,6 @@ const ReviewCard = ({ review }) => {
     });
   };
 
-  // Tentukan warna tema berdasarkan sentimen
   const getThemeColor = (s) => {
     switch (s?.toLowerCase()) {
       case 'positive': return 'emerald';
@@ -31,7 +25,6 @@ const ReviewCard = ({ review }) => {
 
   const theme = getThemeColor(review.sentiment);
 
-  // Mapping class warna Tailwind dinamis
   const borderClass = {
     emerald: 'border-t-emerald-500',
     rose: 'border-t-rose-500',

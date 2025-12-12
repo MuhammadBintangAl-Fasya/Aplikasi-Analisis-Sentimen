@@ -47,7 +47,7 @@ else:
 
 # --- CONFIGURATION ---
 # Menggunakan URL router baru (Stable)
-HF_API_URL = "https://router.huggingface.co/hf-inference/models/cardiffnlp/twitter-roberta-base-sentiment-latest"
+HF_API_URL = "https://router.huggingface.co/hf-inference/models/cardiffnlp/twitter-xlm-roberta-base-sentiment"
 HF_HEADERS = {"Authorization": f"Bearer {HUGGINGFACE_TOKEN}"}
 
 
@@ -108,10 +108,8 @@ async def extract_key_points(review_text: str, product_name: str) -> List[str]:
         return ["Analysis unavailable (Missing API Key)"]
 
     try:
-        # NOTE: Menggunakan 'gemini-1.5-flash' (Versi 2.5 belum rilis publik, akan error 404)
         model = genai.GenerativeModel('gemini-2.5-flash')
         
-        # --- PERUBAHAN UTAMA DI SINI (PROMPT BAHASA INDONESIA) ---
         prompt = f"""
 Role: Expert Product Analyst.
 Product: "{product_name}"
